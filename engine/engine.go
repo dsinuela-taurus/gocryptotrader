@@ -547,7 +547,7 @@ func (bot *Engine) Start() error {
 	}
 
 	if bot.Settings.EnableEventManager {
-		bot.eventManager, err = setupEventManager(bot.CommunicationsManager, bot.ExchangeManager, bot.Settings.EventManagerDelay, bot.Settings.EnableDryRun)
+		bot.eventManager, err = setupEventManager(bot.CommunicationsManager, bot.ExchangeManager, bot.Settings.EventManagerDelay, bot.Settings.Verbose)
 		if err != nil {
 			gctlog.Errorf(gctlog.Global, "Unable to initialise event manager. Err: %s", err)
 		} else {
